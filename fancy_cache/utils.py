@@ -26,11 +26,5 @@ def filter_remembered_urls(
         for key, value in remembered_urls.items()
         if isinstance(value, tuple) and value[1] > now
     }
-    filtered_urls = [
-        key
-        for key, value in remembered_urls.items()
-        if "/clubs/" in key and "/messages/" in key and isinstance(value, tuple) and value[1] < now
-    ]
-    LOGGER.info("fancy_cache.filter_remembered_urls: filtering these URLs: %s", filtered_urls)
 
     return remembered_urls

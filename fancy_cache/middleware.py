@@ -213,11 +213,7 @@ class FancyUpdateCacheMiddleware(UpdateCacheMiddleware):
                 return False
 
             if remembered_urls is None:
-                # No cache entry; set the cache using `cache.set`.
-                LOGGER.info("fancy_cache._remember_url_cas: remembered_urls is None")
                 return False
-
-            LOGGER.info("fancy_cache._remember_url_cas: remembered_urls is not None")
 
             remembered_urls = filter_remembered_urls(remembered_urls)
 
